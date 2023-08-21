@@ -15,17 +15,6 @@ export class LivrosService {
   totalAngularPackages;
   constructor(private http: HttpClient) {}
 
-  getLivros() {
-    return this.http
-      .get<any>('assets/books.json')
-      .toPromise()
-      .then((res) => <Book[]>res.data)
-      .then((data) => {
-        console.log(data);
-        return data;
-      });
-  }
-
   getBuscaCompleta(): any {
     return this.http.get<Book[]>('assets/books.json');
   }
