@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LivrosComponent } from './book-data/book-data.component';
+import { LivrosComponent } from './listar_livros/listarLivros.component';
 import { TableModule } from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';

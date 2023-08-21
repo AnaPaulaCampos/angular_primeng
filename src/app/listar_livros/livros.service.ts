@@ -12,7 +12,7 @@ export interface Book {
   providedIn: 'root',
 })
 export class LivrosService {
-  totalAngularPackages;
+  
   constructor(private http: HttpClient) {}
 
   getBuscaCompleta(): any {
