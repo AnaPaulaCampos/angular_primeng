@@ -4,17 +4,24 @@ import { LivrosService, Book } from './book.service';
 @Component({
   selector: 'app-book-data',
   templateUrl: './book-data.component.html',
-  styleUrls: ['./book-data.component.css']
+  styleUrls: ['./book-data.component.css'],
 })
 export class LivrosComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private bookService: LivrosService) { }
+  constructor(private bookService: LivrosService) {}
 
   ngOnInit() {
-    this.bookService.getLivros().
-      then(books => this.books = books);
+    this.getTodosLivros();
+  }
+
+  getTodosLivros() {
+    this.bookService.getBuscaCompleta().subscribe(
+      resultado => {
+      this.books = resultado.data;
+    }
+    );
   }
 
   onRowEditInit(book: Book) {
@@ -28,5 +35,4 @@ export class LivrosComponent implements OnInit {
   onRowEditCancel(book: Book, index: number) {
     console.log('Row edit cancelled');
   }
-
 }
